@@ -1,0 +1,20 @@
+psql -U postgres
+\l
+\dt
+\q
+\c
+
+psql -d [dbname] -c [command]
+psql -d traindb -c "select * from users;"
+
+##CSV DATA IMPORT
+psql -d traindb -c "\copy users FROM '/tmp/users.csv' DELIMITERS ',' CSV HEADER;"
+
+##DATABASE CREATE & DROP
+psql -U postgres
+create database [dbname];
+drop database [dbname];
+
+##CREATE TABLE
+create table [tablename](id int,name varchar(10),age int);
+
